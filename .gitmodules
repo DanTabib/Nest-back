@@ -1,0 +1,6 @@
+[submodule "packages/common_models"]
+	path = packages/common_models
+	url = https://github.com/shinobisoft524/xamlink_common_models.git
+[submodule "packages/modules/xvalidations"]
+	path = packages/modules/xvalidations
+	url = https://github.com/shinobisoft524/xamlinx_common_validations.git

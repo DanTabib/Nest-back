@@ -1,0 +1,11 @@
+model Role {
+    id          String   @id() @default(uuid())
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt()
+    name        String   @unique()
+    description String
+    isActived   Boolean  @default(true)
+    User        User[]
+
+    @@map("roles")
+}

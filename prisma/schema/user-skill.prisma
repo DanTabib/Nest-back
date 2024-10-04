@@ -1,0 +1,14 @@
+model UserSkill {
+    id         String        @id() @default(uuid())
+    createdAt  DateTime      @default(now())
+    updatedAt  DateTime      @updatedAt()
+    isActived  Boolean       @default(true)
+    profile    WorkerProfile @relation(fields: [profileId], references: [id])
+    profileId  String
+    skill      Skill         @relation(fields: [skillId], references: [id])
+    skillId    String
+    skillYears Int
+    skillRate  Int /// 1 ~ 10
+
+    @@map("user-skills")
+}

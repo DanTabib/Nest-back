@@ -1,0 +1,48 @@
+model WorkerProfile {
+    id        String   @id() @default(uuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt()
+    firstName String
+    midName   String?
+    lastName  String
+
+    countryPrefix String?
+    phone         String?
+    phone2        String?
+    personEmail   String?
+    workEmail     String?
+
+    summary String? @db.Text
+
+    minRate  Int?
+    maxRate  Int?
+    rateType Int?
+
+    nationality Int?
+
+    employmentStatus    Int?
+    workPermitCountries Int[]
+    workPreference      Int?
+
+    gender Gender
+    birthY Int?
+    birthM Int?
+    birthD Int?
+
+    skills UserSkill[]
+
+    educationLevel Int?
+    educationField String?
+    schoolName     String?
+    schoolCountry  String?
+    schoolLocation String?
+    fromM          Int?
+    fromY          Int?
+    toM            Int?
+    toY            Int?
+
+    User   User?
+    userId String @unique
+
+    @@map("worker-profiles")
+}
